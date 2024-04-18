@@ -11,7 +11,7 @@ DotEnv.config()
 const store = new session.MemoryStore()
 path.__dirname = path.resolve(path.dirname('./client/public/index.html'))
 
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 const app = new Express();
 
 app.use(Express.json());
