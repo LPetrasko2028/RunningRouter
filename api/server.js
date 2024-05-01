@@ -105,7 +105,7 @@ app.use(
         ],
         // workerSrc: ["'self'", "blob:"],
         // objectSrc: ["'none'"],
-        // upgradeInsecureRequests: [],
+        upgradeInsecureRequests: [],
         // blockAllMixedContent: [],
         // baseUri: [],
         // formAction: [],
