@@ -93,6 +93,7 @@ app.use(
           "http://127.0.0.1:5000/getCoordinates",
           "http://134.209.46.156:8080/*",
           "http://134.209.46.156:8080/overpassGather",
+          "https://134.209.46.156:8080/overpassGather",
         ],
         frameSrc: [
           "'self'",
