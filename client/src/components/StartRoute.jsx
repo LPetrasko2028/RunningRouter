@@ -8,6 +8,7 @@ import * as olStyle from 'ol/style'
 import { TextInput } from 'flowbite-react';
 import MapContext  from './mapComponents/MapContext';
 import { GlobalContext } from './App';
+import { FLASK_URL } from '../requests/API_URL';
 
 const StartRoute = (props) => {
     [start, setStart] = React.useState(null);
@@ -116,7 +117,7 @@ async function sendStart(e) {
       result.append('mileage', distance)
       result.append('roadOptions', JSON.stringify(roadOptions)) // send as a JSON string
 
-      const dataBack = await fetch("http://127.0.0.1:5000/overpassGather", {
+      const dataBack = await fetch(`${FLASK_URL}/overpassGather`, {
       method: "POST", // or 'PUT'
       body: result,
     }).then(response => response.json())
@@ -154,7 +155,7 @@ async function OutsideTextbox() {
     try {
       let result = new FormData()
       result.append('address', address)
-      const dataBack = await fetch("http://127.0.0.1:5000/getCoordinates", {
+      const dataBack = await fetch(`${FLASK_URL}/getCoordinates`, {
       method: "POST", // or 'PUT'
       body: result,
     }).then(response => response.json())
