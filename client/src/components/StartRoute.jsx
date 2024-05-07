@@ -110,6 +110,7 @@ async function sendStart(e) {
 
       if (distance < 0) {
         alert("Distance cannot be negative. Please enter a valid value.");
+        setGenerateDisabled(false)
         return; // Stop execution of the function
       }
       result.append('email', userData.email)
@@ -143,6 +144,7 @@ async function sendStart(e) {
   }
   else {
     alert("Please select a starting point")
+    setGenerateDisabled(false)
   }
 }
 
